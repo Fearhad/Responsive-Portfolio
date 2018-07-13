@@ -154,6 +154,29 @@ header {
     overflow: hidden;
 }
 
+h1 {
+    -webkit-animation-name: colorFlash; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    animation-name: colorFlash;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes colorFlash {
+    from {color: white;}
+    to {color: black;}
+}
+
+/* Standard syntax */
+@keyframes colorFlash {
+    from {color: white;}
+    to {color: black;}
+}
+
 #logo {
     background-color: #4aaaa5;
     float: left;
@@ -280,12 +303,12 @@ input[type=submit]:hover {
     input[type=text] {
         padding: 10px;
         margin: 10 0 10 0;
-        width: 90%;
+        width: 100%;
         box-sizing: border-box;
     }
     
     textarea {
-        width: 90%;
+        width: 100%;
     }
     article {
         float: none;
@@ -321,41 +344,41 @@ input[type=submit]:hover {
     }
     input[type=text] {  
         
-        width: 90%;
+        width: 100%;
         
     }
     
     textarea {
-        width: 90%;
+        width: 100%;
     }
-    article {
-        float: none;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    section {
-        margin: 0 auto;
-        clear: none;
-    }
+    
+    
     figure {
         width: 100%;
     }
     figcaption {
         position: absolute;
+        right: 0;
+        left: 20px;
         bottom: 30px;
         z-index: 1;
         background-color: #4aaaa5;
-        padding: 16px;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        padding-left: 0px;
+        padding-right: 0px;
         text-align: center;
         font-size: 18px;
         color: #ffffff;
-        width: 89.5%;
+        width: 94%;
         font-family: arial, 'Helvetica Neue', Helvetica, sans-serif;
     }
-    img {
+
+    .portImage {
         width: 100%;
     }
+    
+    
     
 }
 @media screen and (max-width: 640px) {
@@ -373,40 +396,29 @@ input[type=submit]:hover {
         float: None;
         text-align: center;
     }
-    #myPhoto {
-        float: none;
-        width: 100%;
-    }
-    article {
-        float: none;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-    }
+   
+    
     section {
         clear: none;
-        width: 100%;
     }
     figure {
         width: 100%;
     }
-
-    img {
-        width: 100%;
-    }
+    
     figcaption {
-        width: 86%;
+        width: 90%;
     }
 
     Input[type=text] {
         padding: 10px;
-        width: 90%;
         box-sizing: border-box;
+        width: 100%;
     }
     
     textarea {
-        width: 90%;
+        width: 100%;
     }
+    
     #logo, nav {
         width: 100%;
     }
@@ -417,5 +429,12 @@ input[type=submit]:hover {
 
     hr {
         width: 100%;
+    }
+    header  {
+        position: static;
+    }
+
+    #myPhoto {
+        max-width: 200px;
     }
 }
